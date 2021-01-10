@@ -1,39 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer, useEffect } from "react";
 import Cards from './Cards';
-import * as api from '../REST.js';
+import { getRate } from "../REST";
+import constants from "../../constants/constants";
+import { initialState, reducer } from "../../manager/reducer";
 import './movies.css'
 
+const FilmRating = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-const Movies = () => {
-    const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    getRate().then((res) => {
+      dispatch({
+        type: constants.SAVE_CARDS,
+        payload: res.films,
+      });
+    });
+  }, []);
 
-    useEffect(async () => { //
-        const films = api.getRate(); //componentDidMount - когда срендерился(отрисовался) компонент
-        setMovies(await films);
+  const { movies } = state;
 
-        return () => { //componentWillUnmount - когда кмопонент удалился из вёрстки
-            setMovies([]);
-        };
-    }, []);
+  const handleRemove = (filmId) => {
+    console.log(filmId);
+    dispatch({
+      type: constants.REMOVE_CARD,
+      payload: filmId,
+    });
+  };
 
-    return (
-        <div data-at={'wrapper'}>
-            <div className="dictionary">
-                {
-                    movies.length ?
-                        movies.map((move, index) =>
-                            <Cards
-                                key={index}
-                                citys={move.nameEn}
-                                about={move.year}
-                                images={move.posterUrl}
-                            />
-                        )
-                    : null
-                }
-            </div>
+  return (
+    <div data-at={"root__wrapper"}>
+      <div>
+        <h1 className={"wrapper__header"}>FILMS</h1>
+      </div>
+      <div className={"root__dictionary"}>
+        <div>
+          {movies.length
+            ? movies.map((move, index) => (
+                <Cards
+                  id={move.filmId}
+                  key={index}
+                  citys={move.nameEn}
+                  about={move.year}
+                  images={move.posterUrl}
+                  countries={move.rating}
+                  onRemove={handleRemove}
+                />
+              ))
+            : null}
         </div>
-    )
-  }
+      </div>
+    </div>
+  );
+};
 
-export default React.memo(Movies);
+export default FilmRating;
