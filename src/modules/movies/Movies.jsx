@@ -30,7 +30,7 @@ const FilmRating = () => {
   return (
     <div data-at={"root__wrapper"}>
       <div>
-        <h1 className={"wrapper__header"}>FILMS</h1>
+        <h1 className={"wrapper__header"}>Top await movies</h1>
       </div>
       <div className={"root__dictionary"}>
         <div>
@@ -39,10 +39,9 @@ const FilmRating = () => {
                 <Cards
                   id={move.filmId}
                   key={index}
-                  citys={move.nameEn}
+                  name={move.nameEn}
                   about={move.year}
                   images={move.posterUrl}
-                  countries={move.rating}
                   onRemove={handleRemove}
                 />
               ))
