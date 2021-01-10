@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.notes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: rgb(152, 245, 209);
+}
+
+.card__image {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  border: none;
+  margin-left: 420px;
+}
+
+.card__city {
+  font-size: 40px;
+  text-align: center;
+  margin: 5px;
+}
+
+.card__about {
+  font-size: 35px;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.remove__btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin-left: 780px;
+  z-index: 1;
+  background-color: rgb(221, 91, 31);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

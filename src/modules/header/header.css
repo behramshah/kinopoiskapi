@@ -1,0 +1,42 @@
+.Top {
+    color:white;
+    background:linear-gradient(rgb(250, 250, 128),rgb(102, 102, 238));
+    margin:0px
+    
+}
+
+.Header {
+        font-size: 35px;
+        margin-top: 0px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;     
+}
+
+.H1{
+    font-size: 32px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;     
+}
+
+.nav{
+    list-style-type: none;
+    font-size: 35px;
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+     
+}
+
+li {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    color:white;
+}
