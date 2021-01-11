@@ -4,7 +4,7 @@ export const initialState = {
   movies: [],
 };
 
-export const reducer = (state, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case constants.SAVE_CARDS:
       return {

@@ -20,7 +20,7 @@ function Homepage() {
               вы можете писать на
               <address>
               <a href='mailto:support@kinopoiskapiunofficial.tech'>support@kinopoiskapiunofficial.tech</a>
-              </address>
+              </address>              
             </p>
           </div>
         </div>

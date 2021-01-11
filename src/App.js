@@ -4,7 +4,7 @@ import Homepage from './modules/homepage/Homepage.jsx';
 import About from './modules/about/About.jsx';
 import Movies from './modules/movies/Movies.jsx';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
  } from "react-router-dom";
